@@ -1,6 +1,6 @@
 .div1 {
     float: left;
-    width: auto;
+    width: 200px;
     height: 500px;
     background: rgb(177, 212, 177);
     border: solid 1px;
@@ -8,10 +8,10 @@
 
 .cena {
     float: left;
-    width: 600px;
+    width: 1126px;
     height: 500px;
     margin-left: 5px;
-    background: url('cenario.png');
+    background: url('cenario1.png');
     background-position: bottom;
 }
 

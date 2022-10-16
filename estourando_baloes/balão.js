@@ -56,7 +56,7 @@ function cria_baloes(q_baloes) {
     for (let i = 1; i <= q_baloes; i++) {
 
         let balao = document.createElement("img");
-        balao.src = 'imagens/balao_azul_pequeno.png';
+        balao.src = 'imagens/morceguinho.png';
         balao.style.margin = '12px';
         balao.id = 'b' + i;
         balao.onclick = function () { estoura(this); };
@@ -68,7 +68,7 @@ function cria_baloes(q_baloes) {
 
 function estoura(b) {
     let id_balao = b.id;
-    document.getElementById(id_balao).src = 'imagens/balao_azul_pequeno_estourado.png';
+    document.getElementById(id_balao).src = 'imagens/morceguinho2.png';
     
     pontuacao(-1);
     
