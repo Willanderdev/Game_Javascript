@@ -14,13 +14,13 @@ function iniciajogo() {
     let ts = 0;
 
     if (link == 1) {
-        ts = 120;
-    }
-    if (link == 2) {
         ts = 60;
     }
-    if (link == 3) {
+    if (link == 2) {
         ts = 30;
+    }
+    if (link == 3) {
+        ts = 18;
     }
 
     document.getElementById('cronometro').innerHTML = ts;
@@ -30,8 +30,8 @@ function iniciajogo() {
 
     cria_baloes(q_baloes);
 
-    document.getElementById('baloes_inteiros').innerHTML = q_baloes;
-    document.getElementById('baloes_estourados').innerHTML = 0;
+    document.getElementById('morcego').innerHTML = q_baloes;
+    document.getElementById('morcego2').innerHTML = 0;
 
     contagem_tempo(ts);
 }
@@ -55,13 +55,13 @@ function game_over() {
 function cria_baloes(q_baloes) {
     for (let i = 1; i <= q_baloes; i++) {
 
-        let balao = document.createElement("img");
-        balao.src = 'imagens/morceguinho.png';
-        balao.style.margin = '12px';
-        balao.id = 'b' + i;
-        balao.onclick = function () { estoura(this); };
+        let batman = document.createElement("img");
+        batman.src = 'imagens/morceguinho.png';
+        batman.style.margin = '12px';
+        batman.id = 'b' + i;
+        batman.onclick = function () { estoura(this); };
         
-        document.getElementById('cenario').appendChild(balao);
+        document.getElementById('cenario').appendChild(batman);
 
     }
 }
@@ -75,23 +75,23 @@ function estoura(b) {
 }
 
 function pontuacao(acao) {
-    let baloes_inteiros = document.getElementById('baloes_inteiros').innerHTML;
-    let baloes_estourados = document.getElementById('baloes_estourados').innerHTML;
+    let morcego_inteiros = document.getElementById('morcego').innerHTML;
+    let morcego_estourados = document.getElementById('morcego2').innerHTML;
 
-    baloes_inteiros = parseInt(baloes_inteiros);
-    baloes_estourados = parseInt(baloes_estourados);
+    morcego_inteiros = parseInt( morcego_inteiros);
+    morcego_estourados = parseInt( morcego_estourados);
 
-    baloes_inteiros = baloes_inteiros + acao;
-    baloes_estourados = baloes_estourados - acao;
+    morcego_inteiros =  morcego_inteiros + acao;
+    morcego_estourados =  morcego_estourados - acao;
 
-    document.getElementById('baloes_inteiros').innerHTML = baloes_inteiros;
-    document.getElementById('baloes_estourados').innerHTML = baloes_estourados;
+    document.getElementById('morcego').innerHTML =  morcego_inteiros;
+    document.getElementById('morcego2').innerHTML =  morcego_estourados;
     
-    situacao_jogo(baloes_inteiros);
+    situacao_jogo(morcego_inteiros);
 }
 
-function situacao_jogo(baloes_inteiros) {
-    if (baloes_inteiros == 0) {
+function situacao_jogo(morcego_inteiros) {
+    if (morcego_inteiros == 0) {
         alert('você ganhou, parabens!')
 
         parar_jogo();

@@ -2,8 +2,19 @@
     float: left;
     width: 200px;
     height: 500px;
-    background: rgb(177, 212, 177);
+    background: rgb(30, 230, 30);
     border: solid 1px;
+    padding-right: 5px;
+}
+.div1 table{
+    padding-right: 5px;
+    margin-right: 5px;
+}
+
+.div1 span{
+    margin-left: 20px;
+    color: red;
+    font-size: 30px;
 }
 
 .cena {
