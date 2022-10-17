@@ -8,9 +8,9 @@ let timerId = null; // variavel que armazena a chamada da função timeout
 function iniciajogo() {
     let url = window.location.search;
     let link = url.replace('?', '');
-    //1 facil = 120 segundos
-    //2 normal = 60 segundos
-    //3 dificil = 30 segundos
+    //1 facil = 20 segundos
+    //2 normal = 15 segundos
+    //3 dificil = 10 segundos
     let ts = 0;
 
     if (link == 1) {
@@ -26,11 +26,11 @@ function iniciajogo() {
     document.getElementById('cronometro').innerHTML = ts;
     
 
-    let q_baloes = 20;
+    let num_morcego = 20;
 
-    cria_baloes(q_baloes);
+    cria_baloes(num_morcego);
 
-    document.getElementById('morcego').innerHTML = q_baloes;
+    document.getElementById('morcego').innerHTML = num_morcego;
     document.getElementById('morcego2').innerHTML = 0;
 
     contagem_tempo(ts);
@@ -52,25 +52,46 @@ function game_over() {
     alert('voce perdeu...')
 }
 
-function cria_baloes(q_baloes) {
-    for (let i = 1; i <= q_baloes; i++) {
-
+function cria_baloes(num_morcego) {
+    for (let i = 1; i <= num_morcego; i++) {
+        
         let batman = document.createElement("img");
         batman.src = 'imagens/morceguinho.png';
         batman.style.margin = '12px';
         batman.id = 'b' + i;
-        batman.onclick = function () { estoura(this); };
+        batman.onclick = function () {
+            if (batman.id == 'clicado') {
+                restoura(this);
+            }     
+            estoura(this);
+            batman.id = 'clicado'; 
+            console.log(batman.id)    
+           
+          
+
+
+           
+            
+        };
         
         document.getElementById('cenario').appendChild(batman);
 
     }
 }
+function restoura(m) {
+    let morcegofeliz = m.id;
+
+    document.getElementById(morcegofeliz).src = 'imagens/morceguinho.png';
+
+    pontuacao(+1)
+}
 
 function estoura(m) {
     let morcegofeliz = m.id;
-    document.getElementById(morcegofeliz).src = 'imagens/morceguinho2.png';
     
-    pontuacao(-1);
+    document.getElementById(morcegofeliz).src = 'imagens/morceguinho2.png';
+ 
+    pontuacao(-1)
     
 }
 
