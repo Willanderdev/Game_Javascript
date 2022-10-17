@@ -14,13 +14,13 @@ function iniciajogo() {
     let ts = 0;
 
     if (link == 1) {
-        ts = 60;
+        ts = 20;
     }
     if (link == 2) {
-        ts = 30;
+        ts = 15;
     }
     if (link == 3) {
-        ts = 18;
+        ts = 10;
     }
 
     document.getElementById('cronometro').innerHTML = ts;
@@ -66,9 +66,9 @@ function cria_baloes(q_baloes) {
     }
 }
 
-function estoura(b) {
-    let id_balao = b.id;
-    document.getElementById(id_balao).src = 'imagens/morceguinho2.png';
+function estoura(m) {
+    let morcegofeliz = m.id;
+    document.getElementById(morcegofeliz).src = 'imagens/morceguinho2.png';
     
     pontuacao(-1);
     
